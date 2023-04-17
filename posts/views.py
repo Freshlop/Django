@@ -9,11 +9,20 @@ def frist_view(request):
     if request.method == 'GET':
         return HttpResponse("Hello! Its my project")
 
-def second_view(requst):
-    if requst.method == 'GET':
-        return HttpResponse(f"{datetime.today()}")
 
-def third_view(requst):
-    if requst.method == 'GET':
-        return HttpResponse(f"baibai")
+def main_view(request):
+    if request.method == 'GET':
+        return HttpResponse(datetime.datetime.now())
+        return render(request, 'layouts/index.html')
 
+
+
+def products_view(request):
+    if request.method == 'GET':
+        return HttpResponse("Goodbye user!")
+        products = Product.objects.all()
+
+        context = {
+            'products': products
+        }
+        return render(request, 'products/products.html', context=context)

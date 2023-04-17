@@ -20,8 +20,10 @@ from posts.views import frist_view, second_view, third_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', frist_view),
-    path('now_date/', second_view),
-    path('goodby/', third_view),
-
+    path('', first_view),
+    path('hello/', hello_view),
+    path('now_date/', now_date_view),
+    path('goodbye/', goodbye_view),
+    path('', main_view),
+    path('products/', products_view),
 ]
