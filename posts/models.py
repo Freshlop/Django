@@ -24,7 +24,7 @@ class Product(models.Model):
 
  class Comment (models.Model):
      text = models.CharField(max_length=265)
-     posts = models.ForeignKey(Post, on_delete=models.CASCADE)
+     posts = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 
 

@@ -32,7 +32,7 @@ def products_view(request):
 
 def post_detail_view(request, id):
     if request.method == 'GET':
-        post = Post.objects.get(id=id)
+        post =  Product.objects.get(id=id)
 
 
         context = {
