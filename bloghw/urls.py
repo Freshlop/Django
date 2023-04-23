@@ -29,7 +29,7 @@ urlpatterns = [
     # path('goodbye/', goodbye_view),
     path('', main_view),
     path('products/', products_view),
-    path('posts/<int:id>', product_detail_view)
+    path('products/<int:id>/', product_detail_view)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

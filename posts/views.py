@@ -8,9 +8,9 @@ from posts.models import Product
 '''NVC - MODEL VIEW CONTROLLER'''
 
 
-def frist_view(request):
-    if request.method == 'GET':
-        return HttpResponse("Hello! Its my project")
+# def frist_view(request):
+#     if request.method == 'GET':
+#         return HttpResponse("Hello! Its my project")
 
 
 def main_view(request):
@@ -21,7 +21,6 @@ def main_view(request):
 
 def products_view(request):
     if request.method == 'GET':
-        # return HttpResponse("Goodbye user!")
         products = Product.objects.all()
 
         context = {
@@ -32,10 +31,13 @@ def products_view(request):
 
 def product_detail_view(request, id):
     if request.method == 'GET':
-        post = Product.objects.get(id=id)
+        products = Product.objects.get(id=id)
 
         context = {
-            'post': post
+            'products': products,
+            'comments': products.comment_set.all()
         }
 
         return render(request, 'posts/detail.html', context=context)
+
+
