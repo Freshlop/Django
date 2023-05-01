@@ -27,12 +27,21 @@
         <li class="nav-item">
           <a class="nav-link" href="/products">Products</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          {% if not user.is_amanumaus %}
+          <li class="nav-item">
+              <a class="nav-link" href="/products/create">Create products</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/users/logout">Logout</a>
+          {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="/users/register/">Register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/users/login">Login</a>
+
+          {% endif %}
+         </li>
       </ul>
     </div>
   </div>
