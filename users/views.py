@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-
+from django.shortcuts import render, redirect
 from users.forms import RegisterForm, LoginForm
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 def register_view(request):
     if request.method == 'GET':

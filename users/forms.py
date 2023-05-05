@@ -10,12 +10,9 @@ class RegisterForm(forms.Form):
 
 
 
-    class LoginForm(forms.Form):
-        usernsme = forms.CharField(max_length=32)
-        password = forms.CharField(widget=forms.PasswordInput(),
-                                   min_length=3)
+class LoginForm(forms.Form):
+    usernsme = forms.CharField(max_length=32)
+    password = forms.CharField(widget=forms.PasswordInput(),
+                               min_length=3)
 
 
-def logout_view(request):
-   logout(request)
-   return redirect('/product')

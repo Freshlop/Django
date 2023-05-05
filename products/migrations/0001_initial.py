@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.CharField(max_length=265)),
-                ('posts', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='posts.product')),
+                ('products', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.product')),
             ],
         ),
     ]
